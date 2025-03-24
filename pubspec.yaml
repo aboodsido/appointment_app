@@ -34,6 +34,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
+  flutter_native_splash: ^2.4.5
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.17
   freezed: ^3.0.4
   freezed_annotation: ^3.0.0
   get_it: ^8.0.3
@@ -44,7 +47,6 @@ dependencies:
   retrofit: ^4.4.2
   retrofit_generator: ^9.1.9
   shared_preferences: ^2.5.2
-  flutter_native_splash: ^2.4.5
 
 dev_dependencies:
   flutter_lints: ^5.0.0
