@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 16.h),
                 RememberAndForgetRow(),
                 SizedBox(height: 32.h),
-                LoginButton(),
+                AppTextButton(buttonText: 'Login', onPressed: () {}),
               ],
             ),
           ),

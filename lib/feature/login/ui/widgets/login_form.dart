@@ -4,12 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/app_text_form_field.dart.dart';
 
-class LoginForm extends StatelessWidget {
-  LoginForm({super.key});
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
+
   TextEditingController emailController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
+
+  bool isObsecureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +31,19 @@ class LoginForm extends StatelessWidget {
           AppTextFormField(
             controller: passwordController,
             label: 'Password',
-            obsecureText: true,
+            obsecureText: isObsecureText,
             suffixIcon: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.remove_red_eye, color: ColorManager.grey),
+              onPressed: () {
+                setState(() {
+                  isObsecureText = !isObsecureText;
+                });
+              },
+              icon: Icon(
+                isObsecureText
+                    ? Icons.visibility_off_rounded
+                    : Icons.visibility_rounded,
+                color: ColorManager.grey,
+              ),
             ),
           ),
         ],

@@ -4,24 +4,41 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+class AppTextButton extends StatelessWidget {
+  AppTextButton({
+    super.key,
+    this.borderRadius,
+    required this.buttonText,
+    this.buttonTextStyle,
+    required this.onPressed,
+    this.backgroundColor,
+    this.buttonWidth,
+    this.buttonHeight,
+  });
+
+  final double? borderRadius;
+  final String? buttonText;
+  final TextStyle? buttonTextStyle;
+  final VoidCallback? onPressed;
+  final Color? backgroundColor;
+  final double? buttonWidth;
+  final double? buttonHeight;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: Size(double.infinity, 50.h),
-        backgroundColor: ColorManager.mainBlue,
+        minimumSize: Size(buttonWidth ?? double.infinity, buttonHeight ?? 50.h),
+        backgroundColor: backgroundColor ?? ColorManager.mainBlue,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
         ),
       ),
-      onPressed: () {
-        // context.pushNamed(Routes.homeScreen);
-      },
-      child: Text('Login', style: TextStyles.font16WhiteSemiBold),
+      onPressed: onPressed,
+      child: Text(
+        buttonText!,
+        style: buttonTextStyle ?? TextStyles.font16WhiteSemiBold,
+      ),
     );
   }
 }
