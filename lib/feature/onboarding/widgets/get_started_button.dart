@@ -17,7 +17,7 @@ class GetStartedButton extends StatelessWidget {
         style: TextButton.styleFrom(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
 
-          minimumSize: Size(double.infinity, 60.h),
+          minimumSize: Size(double.infinity, 50.h),
           backgroundColor: ColorManager.mainBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
