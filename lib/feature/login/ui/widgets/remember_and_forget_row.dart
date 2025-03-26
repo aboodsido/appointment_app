@@ -14,7 +14,7 @@ class RememberAndForgetRow extends StatelessWidget {
         Row(
           children: [
             Checkbox(
-              side: BorderSide(color: ColorManager.grey),
+              side: BorderSide(color: ColorManager.lightGrey, width: 2),
               value: false,
               onChanged: (value) {},
               activeColor: ColorManager.mainBlue,

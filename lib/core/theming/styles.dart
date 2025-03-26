@@ -50,4 +50,24 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorManager.darkBlue,
   );
+  static final font11DarkBlueRegular = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.darkBlue,
+  );
+  static final font11MoreLighterGreyNormal = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: ColorManager.moreLighterGrey,
+  );
+  static final font11BlackNormal = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: Colors.black,
+  );
+  static final font11BlueRegular = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.mainBlue,
+  );
 }

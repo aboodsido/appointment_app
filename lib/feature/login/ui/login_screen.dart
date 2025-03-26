@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'widgets/already_have_account.dart';
 import 'widgets/login_button.dart';
 import 'widgets/login_form.dart';
 import 'widgets/remember_and_forget_row.dart';
+import 'widgets/terms_and_privacy.dart';
 import 'widgets/welcome_and_text.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -33,6 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 RememberAndForgetRow(),
                 SizedBox(height: 32.h),
                 AppTextButton(buttonText: 'Login', onPressed: () {}),
+                SizedBox(height: 50.h),
+                TermsAndPrivacyWidget(),
+                SizedBox(height: 50.h),
+                AlreadyHaveAccountWidget(),
               ],
             ),
           ),

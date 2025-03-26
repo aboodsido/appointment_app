@@ -32,13 +32,12 @@ class _LoginFormState extends State<LoginForm> {
             controller: passwordController,
             label: 'Password',
             obsecureText: isObsecureText,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  isObsecureText = !isObsecureText;
-                });
-              },
-              icon: Icon(
+            suffixIcon: GestureDetector(
+              onTap:
+                  () => setState(() {
+                    isObsecureText = !isObsecureText;
+                  }),
+              child: Icon(
                 isObsecureText
                     ? Icons.visibility_off_rounded
                     : Icons.visibility_rounded,
