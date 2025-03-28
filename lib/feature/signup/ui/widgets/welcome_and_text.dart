@@ -3,18 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/styles.dart';
 
-class WelcomeAndTextSignUp extends StatelessWidget {
-  const WelcomeAndTextSignUp({super.key});
+class CreateAccountAndTextSignUp extends StatelessWidget {
+  const CreateAccountAndTextSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Welcome', style: TextStyles.font28BlueBold),
+        Text('Create Account', style: TextStyles.font28BlueBold),
         SizedBox(height: 8.h),
         Text(
-          'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+          'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
           style: TextStyles.font14GreyNormal,
         ),
       ],
