@@ -17,13 +17,13 @@ class AppointmentApp extends StatelessWidget {
       ensureScreenSize: true,
       minTextAdapt: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: ColorManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
+        debugShowCheckedModeBanner: false,
         onGenerateRoute: router.generateRoute,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.homeScreen,
       ),
     );
   }
