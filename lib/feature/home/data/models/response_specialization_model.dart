@@ -33,9 +33,9 @@ class DoctorDataModel {
   String? photo;
   String? email;
   String? phone;
-  int? gender;
+  String? gender;
   @JsonKey(name: "appoint_price")
-  double? appointPrice;
+  num? appointPrice;
   String degree;
 
   DoctorDataModel({

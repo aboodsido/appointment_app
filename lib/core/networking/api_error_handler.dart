@@ -146,6 +146,7 @@ class ErrorHandler implements Exception {
     } else {
       // default error
       apiErrorModel = DataSource.DEFAULT.getFailure();
+      print('Default error ::::::::: ${apiErrorModel.message}');
     }
   }
 }

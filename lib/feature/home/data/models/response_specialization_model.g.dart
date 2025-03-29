@@ -47,8 +47,8 @@ DoctorDataModel _$DoctorDataModelFromJson(Map<String, dynamic> json) =>
       photo: json['photo'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
-      gender: (json['gender'] as num?)?.toInt(),
-      appointPrice: (json['appoint_price'] as num?)?.toDouble(),
+      gender: json['gender'] as String?,
+      appointPrice: json['appoint_price'] as num?,
       degree: json['degree'] as String,
     );
 
