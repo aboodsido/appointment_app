@@ -14,6 +14,7 @@ class AppointmentApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
+      ensureScreenSize: true,
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

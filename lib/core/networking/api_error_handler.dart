@@ -65,7 +65,6 @@ class ResponseMessage {
 }
 
 extension DataSourceExtension on DataSource {
-
   ApiErrorModel getFailure() {
     switch (this) {
       case DataSource.NO_CONTENT:

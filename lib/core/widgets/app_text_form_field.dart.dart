@@ -14,6 +14,7 @@ class AppTextFormField extends StatelessWidget {
     this.enabledBorder,
     this.focusedBorder,
     this.suffixIcon,
+    required this.validator,
   });
   TextEditingController? controller;
   String? label;
@@ -22,10 +23,12 @@ class AppTextFormField extends StatelessWidget {
   InputBorder? focusedBorder;
   InputBorder? enabledBorder;
   Widget? suffixIcon;
+  Function(String?) validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) => validator(value),
       cursorColor: ColorManager.mainBlue,
       cursorRadius: Radius.circular(16),
       controller: controller,
@@ -53,6 +56,14 @@ class AppTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               borderSide: BorderSide(width: 1, color: ColorManager.mainBlue),
             ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(width: 1, color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(width: 1, color: Colors.red),
+        ),
         focusColor: ColorManager.mainBlue,
         suffixIcon: suffixIcon,
       ),
