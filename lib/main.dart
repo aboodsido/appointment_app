@@ -5,9 +5,9 @@ import 'appointment_app.dart';
 import 'core/di/dependency.injection.dart';
 import 'core/routing/app_router.dart';
 
-void main() async {
+void main() {
   // To fix the issue with the texts hidden in release mode
-  await ScreenUtil.ensureScreenSize();
+  // await ScreenUtil.ensureScreenSize();
   initGetIt();
   runApp(AppointmentApp(router: AppRouter()));
 }
