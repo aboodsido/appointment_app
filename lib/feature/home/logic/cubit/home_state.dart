@@ -1,4 +1,3 @@
-
 import '../../data/models/response_specialization_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,8 +10,13 @@ class HomeState with _$HomeState {
   //Specializations States
   const factory HomeState.specializationsLoading() = SpecializationsLoading;
   const factory HomeState.specializationsSuccess(
-    ResponseSpecializationModel responseSpecialization,
+    List<SpecializtionDataModel>? specializationDataList,
   ) = SpecializationsSuccess;
   const factory HomeState.specializationsFailure(String errorHandler) =
       SpecializationsFailure;
+
+  //Doctor States
+  const factory HomeState.doctorsSuccess(List<DoctorDataModel>? doctorsList) = DoctorsSuccess;
+  const factory HomeState.doctorsFailure(String errorHandler) =
+      DoctorsFailure;
 }

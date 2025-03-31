@@ -146,7 +146,6 @@ class ErrorHandler implements Exception {
     } else {
       // default error
       apiErrorModel = DataSource.DEFAULT.getFailure();
-      print('Default error ::::::::: ${apiErrorModel.message}');
     }
   }
 }
@@ -163,6 +162,9 @@ ApiErrorModel _handleError(DioException error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
+        // print('Status Code: ${error.response?.statusCode}');
+        // print('Error Data Type: ${error.response?.data.runtimeType}');
+        // print('Error Response: ${error.response?.data}');
         return ApiErrorModel.fromJson(error.response!.data);
       } else {
         return DataSource.DEFAULT.getFailure();
