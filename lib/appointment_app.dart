@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/routes.dart';
+import 'main.dart';
 
 class AppointmentApp extends StatelessWidget {
   AppRouter router = AppRouter();
@@ -23,7 +24,7 @@ class AppointmentApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: router.generateRoute,
-        initialRoute: Routes.homeScreen,
+        initialRoute: isLoggedIn ? Routes.homeScreen : Routes.loginScreen,
       ),
     );
   }
