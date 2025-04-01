@@ -20,8 +20,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
           doctorsSuccess: (doctorsList) {
             return DoctorsListView(doctorLists: doctorsList);
           },
-          doctorsFailure:
-              (error) => Text(error, style: TextStyles.font14DarkBlueRegular),
+          doctorsFailure: () => const SizedBox.shrink(),
           orElse: () => const SizedBox.shrink(),
         );
       },

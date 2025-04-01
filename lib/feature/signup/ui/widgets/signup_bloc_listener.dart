@@ -1,4 +1,5 @@
 import 'package:appointments_app/core/helpers/extentions.dart';
+import 'package:appointments_app/core/networking/api_error_model.dart';
 import 'package:appointments_app/feature/signup/logic/cubit/sign_up_cubit.dart';
 import 'package:appointments_app/feature/signup/logic/cubit/sign_up_state.dart';
 import 'package:flutter/material.dart';
@@ -38,8 +39,8 @@ class SignupBlocListener extends StatelessWidget {
             );
             context.pushReplacementNamed(Routes.loginScreen);
           },
-          signupError: (error) {
-            setupErrorState(context, error);
+          signupError: (apiErrorModle) {
+            setupErrorState(context, apiErrorModle);
           },
         );
       },
@@ -47,14 +48,17 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModle) {
     context.pop();
     showDialog(
       context: context,
       builder:
           (context) => AlertDialog(
             icon: Icon(Icons.error, color: Colors.red),
-            content: Text(error, style: TextStyles.font14DarkBlueRegular),
+            content: Text(
+              apiErrorModle.getAllErrorMessages(),
+              style: TextStyles.font14DarkBlueRegular,
+            ),
             actions: [
               TextButton(
                 onPressed: () => context.pop(),
