@@ -24,7 +24,7 @@ class AppointmentApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: router.generateRoute,
-        initialRoute: isLoggedIn ? Routes.homeScreen : Routes.loginScreen,
+        initialRoute:Routes.loginScreen,
       ),
     );
   }

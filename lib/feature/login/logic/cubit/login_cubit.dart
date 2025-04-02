@@ -1,7 +1,6 @@
 import 'package:appointments_app/core/helpers/constants.dart';
 import 'package:appointments_app/core/helpers/shared_pref_helper.dart';
 import 'package:appointments_app/feature/login/data/model/login_request_body.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../../core/networking/dio_factory.dart';
@@ -34,8 +33,8 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(loginResponse));
       },
       failure:
-          (error) => emit(
-            LoginState.failure(error: error.apiErrorModel.message ?? ''),
+          (apiErrorModle) => emit(
+            LoginState.failure(apiErrorModle),
           ),
     );
   }

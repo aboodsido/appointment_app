@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
               const DoctorsSpecialitySeeAll(),
               SizedBox(height: 10.h),
               SpecializationBlocBuilder(),
-              // SizedBox(height: 5.h),
               DoctorsBlocBuilder(),
             ],
           ),

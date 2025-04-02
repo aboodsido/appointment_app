@@ -10,18 +10,11 @@ class HomeRepo {
   HomeRepo(this._apiService);
 
   Future<ApiResult<ResponseSpecializationModel>> getSpecializations() async {
-  try {
-    final response = await _apiService.getSpecializations();
-    
-    print("Raw API Response: $response");
-
-    return ApiResult.success(response);
-  } catch (error, stackTrace) {
-    print("API Request Failed: $error");
-    print("StackTrace: $stackTrace");
-
-    return ApiResult.failure(ErrorHandler.handle(error));
+    try {
+      final response = await _apiService.getSpecializations();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
-}
-
 }
