@@ -4,24 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/routes.dart';
+import 'main.dart';
 
 class AppointmentApp extends StatelessWidget {
   AppRouter router = AppRouter();
+
   AppointmentApp({super.key, required this.router});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
+      ensureScreenSize: true,
       minTextAdapt: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: ColorManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
+        debugShowCheckedModeBanner: false,
         onGenerateRoute: router.generateRoute,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute:Routes.loginScreen,
       ),
     );
   }
